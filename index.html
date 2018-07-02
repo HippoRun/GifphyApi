@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Cute Animals</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script src="main.js"></script>
+
+</head>
+<body>
+    <button id="hippo-button">Awesome Hippo Button</button>
+    <div id="images">
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    $("hippo-button").on("click", function(){
+        var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=X3lQMFVyJmL95OOJuO2fAKqWg0G8j3Se=hippos";
+       $.ajax({
+           url: queryURL,
+           method: "GET"
+       })
+      .then(function(response){
+          var imageUrl = response.data.image_original_url;
+          var hipImage = $("<img>");
+          
+          hipImage.attr("src", imageUrl);
+          hipImage.attr("alt", "hippo image");
+
+          $("images").prepend(hipImage);
+      });
+    });
+    </script>
+</body>
+</html>
