@@ -1,0 +1,21 @@
+.one{
+    margin-top: 20px;
+}
+
+.display-4{
+    text-align: center;
+}
+
+.jumbotron{
+    background-color: navy;
+    color: white;
+}
+
+#addAnimalButton:hover{
+    background-color: navy;
+    color: white;
+}
+
+.animal-btn{
+    margin: 3px;
+}
