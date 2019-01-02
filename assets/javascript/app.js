@@ -27,11 +27,11 @@ $("#addAnimalButton").on("click", function (event) {
 
     event.preventDefault();
     // if add animal input empty
-    if ($("#addAnimalInput").val() == "") {
+    if ($("#addAnimalInput").val() === ""){
         return;
     } else {
     // grab input from textbox
-    let newAnimal = $("addAnimalInput").val().trim();
+    let newAnimal = $("#addAnimalInput").val().trim();
     $("#addAnimalInput").val('');
 
     // Add to array
@@ -44,8 +44,8 @@ $("#addAnimalButton").on("click", function (event) {
 // function to display results
 
 function displaySearchResults() {
-    let animal = $(this).attr("aniamName");
-    let queryURL = "https://api.giphy.com/v1/gifs/search?q=" + aniaml + "&limit=10&api_key=mHvEpvrO8IeVtgKto8shRa2sZ0zStXlR";
+    let animal = $(this).attr("animalName");
+    let queryURL = "https://api.giphy.com/v1/gifs/search?q=" + animal + "&limit=10&api_key=X3lQMFVyJmL95OOJuO2fAKqWg0G8j3Se";
     // AJAX GET request
     $.ajax({
         url: queryURL,
